@@ -7,13 +7,15 @@ import io.github.skosnowich.dropexa.resources.TranslationResource;
 
 public class DropExaApplication extends Application<DropExaConfiguration> {
 
+	private static final String APPLICATION_NAME = "drop-exa";
+
 	public static void main(String[] args) throws Exception {
 		new DropExaApplication().run(args);
 	}
 
 	@Override
 	public String getName() {
-		return "drop-exa";
+		return APPLICATION_NAME;
 	}
 
 	@Override
@@ -22,7 +24,7 @@ public class DropExaApplication extends Application<DropExaConfiguration> {
 	}
 
 	private TranslationResource createTranslationResource() {
-		return new TranslationResource();
+		return new TranslationResource(new TestObjects());
 	}
 
 }
